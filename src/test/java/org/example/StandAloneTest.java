@@ -2,6 +2,7 @@ package org.example;
 import Testcomponents.BaseTest;
 import Testcomponents.Retry;
 import org.openqa.selenium.WebElement;
+import org.pageobjectmodel.CheckoutPage;
 import org.pageobjectmodel.LoginPage;
 import org.pageobjectmodel.ProductPage;
 import org.testng.annotations.DataProvider;
@@ -24,10 +25,10 @@ public class StandAloneTest extends BaseTest
         landingPage.needProduct(productname, productNeed);
         ProductPage productPage = landingPage.changeDriver(1);
         productPage.setAddToCart();
-//        CheckoutPage checkoutPage = productPage.clickCart();
-//        checkoutPage.clickProceed();
-//        checkoutPage.proceedCod();
-//        checkoutPage.placeOrder();
+        CheckoutPage checkoutPage = productPage.clickCart();
+        checkoutPage.clickProceed();
+        checkoutPage.proceedCod();
+        checkoutPage.placeOrder();
     }
 
     @DataProvider(name = "LoginCredentials")

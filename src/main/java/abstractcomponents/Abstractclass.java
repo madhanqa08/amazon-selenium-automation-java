@@ -16,7 +16,7 @@ public class Abstractclass
     WebDriver driver;
     // webdriver instance
 
-    //
+
 
     public Abstractclass(WebDriver driver)
     {
