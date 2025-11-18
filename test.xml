@@ -1,0 +1,14 @@
+<suite name="Suite">
+    <listeners>
+        <listener class-name="Testcomponents.ListenersClass"/>
+    </listeners>
+
+    <test name="AmazonAutomation">
+        <classes>
+            <class name="org.example.StandAloneTest"/>
+        </classes>
+    </test>
+
+
+
+</suite>
