@@ -90,6 +90,7 @@ public class BaseTest
     }
 
 
+
     public String takeScreenShoot(String testcaseName) throws IOException
     {
         WebDriver driver = getDriver();  // USE ThreadLocal driver
