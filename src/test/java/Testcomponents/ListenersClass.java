@@ -8,13 +8,15 @@ import org.testng.ITestListener;
 import org.testng.ITestResult;
 import utilities.resources.ExtentedReports;
 
-public class ListenersClass extends BaseTest implements ITestListener {
+public class ListenersClass extends BaseTest implements ITestListener
+{
 
     ExtentReports reports = ExtentedReports.getReport();
     ThreadLocal<ExtentTest> thread = new ThreadLocal<>();
 
     @Override
-    public void onTestStart(ITestResult result) {
+    public void onTestStart(ITestResult result)
+    {
         ExtentTest test = reports.createTest(result.getMethod().getMethodName());
         thread.set(test);
     }
@@ -25,11 +27,13 @@ public class ListenersClass extends BaseTest implements ITestListener {
     }
 
     @Override
-    public void onTestFailure(ITestResult result) {
+    public void onTestFailure(ITestResult result)
+    {
         thread.get().log(Status.FAIL, result.getMethod().getMethodName() + " - Failed ❌");
         thread.get().log(Status.FAIL, result.getThrowable());
 
-        try {
+        try
+        {
             String screenshotPath = takeScreenShoot(result.getMethod().getMethodName());
             thread.get().addScreenCaptureFromPath(screenshotPath);
         } catch (Exception e) {
@@ -38,7 +42,8 @@ public class ListenersClass extends BaseTest implements ITestListener {
     }
 
     @Override
-    public void onFinish(ITestContext context) {
+    public void onFinish(ITestContext context)
+    {
         reports.flush();
     }
 }

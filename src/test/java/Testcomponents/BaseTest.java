@@ -25,6 +25,7 @@ public class BaseTest
     //3. launch application
     //4. take screen shoot
    public WebDriver driver;
+
     private static final ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
     public LandingPage landingPage;
@@ -89,8 +90,6 @@ public class BaseTest
         });
     }
 
-
-
     public String takeScreenShoot(String testcaseName) throws IOException
     {
         WebDriver driver = getDriver();  // USE ThreadLocal driver
@@ -109,7 +108,4 @@ public class BaseTest
 
         return "screenshots/" + fileName;
     }
-
-
-
 }

@@ -20,6 +20,7 @@ public class StandAloneTest extends BaseTest
         loginPage.enterUsername(map.get("username"));
         loginPage.enterPassword(map.get("password"));
         String productName = "Headset";
+        //otyp
         List<WebElement> productname = landingPage.typeProductname(productName);
         String productNeed = "Boat Bassheads 900 Pro Wired Headphones with 40Mm Drivers, Lightweight Foldable Design, Over Ear, Remote Control, Unidirectional Retractable Mic, Adjustable Headband & USB Type-A Compatibility(Black)";
         landingPage.needProduct(productname, productNeed);

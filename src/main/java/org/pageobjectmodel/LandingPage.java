@@ -65,6 +65,7 @@ public class LandingPage extends Abstractclass
     public List<WebElement> typeProductname(String productName)
     {
         waitUntiltheVisibilityoftheWebElement(searchbar);
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Mobile");
         searchbar.sendKeys(productName);
         search.click();
         return products;
