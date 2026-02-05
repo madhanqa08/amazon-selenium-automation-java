@@ -8,8 +8,8 @@ import java.time.Duration;
 
 public class Main
 {
-    @Test
-    public static void positiveLoginTestcase()
+    @Test(priority = 1)
+    public void positiveLoginTestcase()
     {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--guest");
@@ -28,7 +28,7 @@ public class Main
         System.out.println((logoutButton) ? "Logout button is displayed" : "Logout Button is not Displayed");
     }
 
-    @Test
+    @Test(dependsOnMethods = "positiveLoginTestcase" ,priority = 2)
     public void negativeLoginTestcase()
     {
         ChromeOptions options = new ChromeOptions();
@@ -46,7 +46,7 @@ public class Main
         System.out.println((errorLog.contains("Your username is invalid!") ? "Invalid Username Printed" : "Nothing Printed"));
     }
 
-    @Test
+    @Test(dependsOnMethods = "negativeLoginTestcase" , priority = 3)
     public void negativePassowrdTestcase()
     {
         ChromeOptions options = new ChromeOptions();
