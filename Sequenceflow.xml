@@ -1,0 +1,7 @@
+<suite name="sequence">
+    <test name="AmazonAutomation">
+        <classes>
+            <class name="org.example.Main"/>
+        </classes>
+    </test>
+</suite>

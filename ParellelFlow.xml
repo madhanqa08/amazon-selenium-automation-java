@@ -1,0 +1,8 @@
+<suite name="sequence" parallel="methods" thread-count="4">
+
+    <test name="AmazonAutomation">
+        <classes>
+            <class name="org.example.Main"/>
+        </classes>
+    </test>
+</suite>
